@@ -1,0 +1,111 @@
+COMP30023 2021 project 1 after-deadline tests
+v22, last modified 19/04/2021, alternative output for test_p1_n_3a
+
+HEAD is now at 1c18408 Submit report
+Commit log:
+1c18408f29a515bbc59677d10d04806669408059: Submit report
+9175b14e18c823b5f69d4fd6499fcdf7d398ca56: Improve challenge algo
+785b19a614a74ddcac7aa87e9d484ff1d390a2d4: Test challenge
+d3957e6cd03c150e9687d512cf289d1a1d6a5d80: Remove dirty files and Modify make clean
+c796807777cf0271961d2997ce31152678f7f29b: N process scheduler
+5f704891fbfd7e61cc33e5535d99c0c178451181: Two processer scheduler
+0fed9886eb7f430f6467a3ae7575316f7f7ac029: Simple test
+3b864f305722f9d560c9640e4df6b8ec8204d4fd: Single processor scheduler
+b979157459b8b624372ad140d6dd8d7a47464591: Set up/Read commands and file
+4c41813ae24b9c0d25df24eb13d18330e6ecf8ed: init: add .gitlab-ci.yml
+
+Found 1 scripts. Excellent! Removing executable flags
+
+make clean
+rm -f  allocate allocate.o scheduler.o tool.o list.o
+make
+gcc -Wall -c -o allocate.o allocate.c -g
+gcc -Wall -c -o scheduler.o scheduler.c -g -lm
+gcc -Wall -c -o tool.o tool.c -g
+gcc -Wall -c -o list.o list.c -g
+gcc -Wall -o allocate allocate.o scheduler.o tool.o list.o -g -lm
+OK -- ./allocate found
+
+Task 1 test_p1_n_1: Passed
+Task 1 test_p1_n_2: Passed
+Task 2 test_p2_n_1: Passed
+Task 2 test_p2_n_2: Passed
+Task 3 test_p2_p_1: Passed
+Task 3 test_p2_p_2: Passed
+Task 4 test_p4_n_1: Passed
+Task 4 test_p4_n_2: Passed
+Task 5 test_p4_p_1: Passed
+Task 5 test_p4_p_2: Passed
+Task 6 test_p1_n_1: Passed
+Task 6 test_p4_p_2: Passed
+
+Hidden cases:
+Task 1 test_p1_n_3a: Passed
+Task 1 test_p1_n_4a: Passed
+Task 2 test_p2_n_3a: Passed
+Task 2 test_p2_n_4a: Passed
+Task 3 test_p2_p_3: Passed
+Task 3 test_p2_p_4: Passed
+Task 4 test_p4_n_3: Failed
+7,FINISHED,pid=1,proc_remaining=0			      <
+							      >	7,FINISHED,pid=1,proc_remaining=0
+Task 4 test_p4_n_4: Passed
+Task 5 test_p7_p_1: Passed
+Task 5 test_p10_p_1: Failed
+0,RUNNING,pid=1.2,remaining_time=2,cpu=2		      |	0,RUNNING,pid=1.0,remaining_time=2,cpu=2
+0,RUNNING,pid=1.3,remaining_time=2,cpu=3		      |	0,RUNNING,pid=1.1,remaining_time=2,cpu=3
+0,RUNNING,pid=1.4,remaining_time=2,cpu=4		      |	0,RUNNING,pid=1.2,remaining_time=2,cpu=4
+0,RUNNING,pid=1.5,remaining_time=2,cpu=5		      |	0,RUNNING,pid=1.3,remaining_time=2,cpu=5
+0,RUNNING,pid=1.6,remaining_time=2,cpu=6		      |	0,RUNNING,pid=1.4,remaining_time=2,cpu=6
+0,RUNNING,pid=1.7,remaining_time=2,cpu=7		      |	0,RUNNING,pid=1.5,remaining_time=2,cpu=7
+0,RUNNING,pid=1.8,remaining_time=2,cpu=8		      |	0,RUNNING,pid=1.6,remaining_time=2,cpu=8
+0,RUNNING,pid=1.9,remaining_time=2,cpu=9		      |	0,RUNNING,pid=1.7,remaining_time=2,cpu=9
+2,FINISHED,pid=1,proc_remaining=0			      <
+							      >	2,FINISHED,pid=1,proc_remaining=0
+5,RUNNING,pid=4.5,remaining_time=2,cpu=5		      |	5,RUNNING,pid=4.0,remaining_time=2,cpu=5
+5,RUNNING,pid=4.6,remaining_time=2,cpu=6		      |	5,RUNNING,pid=4.1,remaining_time=2,cpu=6
+5,RUNNING,pid=4.7,remaining_time=2,cpu=7		      |	5,RUNNING,pid=4.2,remaining_time=2,cpu=7
+5,RUNNING,pid=4.8,remaining_time=2,cpu=8		      |	5,RUNNING,pid=4.3,remaining_time=2,cpu=8
+5,RUNNING,pid=4.9,remaining_time=2,cpu=9		      |	5,RUNNING,pid=4.4,remaining_time=2,cpu=9
+Task 6 test_p1_n_3a: Passed
+Task 6 test_p1_n_4a: Passed
+
+Task 7
+Challenge test_chal_p2_n.txt: Failed, makespan more or equal
+Challenge test_chal_p2_p.txt: Passed
+Challenge test_chal_p3_p.txt: Passed
+Challenge test_chal_p4_n.txt: Passed
+Challenge test_chal_p4_p.txt: Passed
+Challenge test_chal_p5_n.txt: Passed
+Challenge test_chal_p5_p.txt: Passed
+Challenge test_chal_p6_n_equal.txt: Passed
+Challenge test_chal_p6_p_equal.txt: Passed
+
+
+=============== Automated Grading Assumptions Below =================
+The automated test script assumes that your program will exit with status code of 0 if it successfully runs and terminates correctly.
+Re-examination Guidelines: If you'd like to have your assessment grade reviewed, you need to fill the grade review form.
+Do not email as it is very difficult to keep track of 500+ students using email, we prefer to have everything visible on a single spreadsheet.
+
+How to read diffs?
+LHS is your output; RHS is the expected output.
+Big differences will be truncated.
+
+=============== START RESULTS TABLE ====================
+Task 1: Single Processor:                   2.0
+Task 2: 2 processors, non-parallelisable:   2.0
+Task 3: 2 processors, p and non-p:          2.0
+Task 4: N processors, non-parallelisable:   1.5
+Task 5: N processors, p and non-p:          1.5
+Task 6: Performance Statistics:             1.00
+Task 7: Challenge task:                     1.5
+Task 7: Challenge task report:              0.25
+Task 8: Quality of Software Practices:      1
+Task 9: Build quality:                      1
+Project 1 (Total):                          13.75
+================ END RESULTS TABLE =====================
+Assessor comments:
+Should have more commits
+Good, descriptive comments
+Report exists, is <= 50 words, makespan improved on at least 1 case
+Lacking explanation of why algorithm is better than default (-0.25)

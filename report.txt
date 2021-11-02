@@ -1,0 +1,5 @@
+If parallelisable: 
+k = number of empty cpus. If k = 0, do not split. If arriving process > 1, only the last one is treated as parallelisable.
+
+If not parallelisable: 
+If arriving process = 1 and empty cpu = 0, calculate optimal allocation based on future processes.
